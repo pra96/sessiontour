@@ -1,0 +1,714 @@
+/* Set up defaults styles for site sections, containers, and events */
+.section-bg {
+    width: 100%;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+.home-banner {
+    background-image: url('../images/banners/main-banner.jpg');
+}
+.yoga-banner {
+    background-image: url('../images/banners/yoga.jpg');
+}
+.about-banner {
+    background-image: url("../images/banners/about-us.jpg");
+}
+.climbing-banner {
+    background-image: url("../images/banners/climbing-banner.png");
+}
+
+/* Set defaults for event list containers */
+.event-box {
+    width: 300px;
+    border:none;
+    background-color: #F7F2E6;
+    border-radius: 10px;
+}
+.event-box .event-heading {
+    color: #90341C;
+    font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+    text-transform: uppercase;
+    font-size: 30pt;
+    line-height: 21.96pt;
+}
+.event-list .event-title {
+    color: #3D0B18;
+    font-family: 'ArticulatCF-Bold', Helvetica, Arial, Sans-Serif, serif;
+    font-size: 15pt;
+    line-height: 17pt;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+.event-list .event-description {
+    color: #3D0B18;
+    font-family: 'ArticulatCF-Medium', Helvetica, Arial, Sans-Serif, serif;
+    font-size: 15pt;
+    display: block;
+    line-height: 17pt;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #3D0B18;
+    margin-bottom: 8px;
+}
+.event-list:last-child .event-description {
+    border-bottom: 0;
+}
+.event-list .more-info-link {
+    color: #90341C;
+    font-family: 'ArticulatCF-Bold', Helvetica, Arial, Sans-Serif, serif;
+    font-size: 15pt;
+    line-height: 17pt;
+    text-decoration: none;
+}
+
+/* Set defaults for main section headings and subtext */
+.section-main-box .heading {
+    font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+    font-size: 60pt;
+    text-align: center;
+    color: #90341C;
+    margin-bottom: 2px;
+}
+.section-main-box .sub-text {
+    color: #3D0B18;
+    font-family: 'ArticulatCF-Medium', Helvetica, Arial, Sans-Serif, serif;
+    font-size: 15pt;
+    width:55%;
+    margin:0 auto;
+    text-align: center;
+    line-height: 20pt;
+}
+
+/* set defaults for set of six containers for information */
+.section-main-box .six-set-container {
+    height: 180px;
+    width: 540px;
+    background-color: #E5DAC0;
+    border:none;
+}
+.six-set-container .img {
+    height: 180px;
+    width: 180px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.six-set-container .title {
+    font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+    font-size: 20pt;
+    line-height: 20pt;
+    color: #90341C;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+.six-set-container .description {
+    color: #3D0B18;
+    font-family: "ArticulatCF-Medium", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 15pt;
+    line-height: 16pt;
+}
+.btn.custom-bg {
+    height: 40px;
+    width: 210px;
+    background-color: transparent;
+    background-image: url('../images/backgrounds/btn-bg.png');
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: none;
+    transform:translateY(0);
+    transition: all ease-out 140ms;
+}
+.btn.custom-bg:hover{
+    transform:translateY(5px);
+}
+.section-default {
+    height: 629px;
+    background-image: url('../images/backgrounds/dark-beige-ropes-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.section-default .heading {
+    font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 44px;
+    text-align: center;
+    color: #90341C;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+.section-default .sub-text {
+    color: #491B26;
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 17px;
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    line-height: 22px;
+}
+
+.section-main-box .heading {
+    font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 44px;
+    text-align: center;
+    color: #90341C;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+.section-main-box .sub-text {
+    color: #491B26;
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 17px;
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    line-height: 22px;
+}
+.section-default .polaroid {
+    width: 300px !important;
+    color: #E5DAC0;
+    margin:0 auto;
+    height: 270px;
+    box-shadow: 4px 4px 20px #3D0B18;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+    border-radius: 0;
+}
+
+.section-get-in-touch {
+    position: relative;
+}
+.section-get-in-touch .container.get-in-touch {
+    width: 80%;
+    height: 495px;
+    margin:0 auto;
+    background-image: url('../images/backgrounds/light-beige-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.section-get-in-touch .heading {
+    font-family: "Rnz-EBold", serif;
+    font-size: 44px;
+    text-align: center;
+    color: #90341C;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+.section-get-in-touch .sub-text {
+    color: #491B26;
+    font-family: "Rnz-SemiBold", serif;
+    font-size: 17px;
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    line-height: 22px;
+}
+.section-get-in-touch .form-control {
+    border:none;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Rnz-Normal", serif;
+}
+.section-get-in-touch textarea {
+    height: 146px;
+}
+.section-get-in-touch .form-control::placeholder {
+    color: #DCD7C4;
+    font-style: italic;
+}
+.section-get-in-touch .gt-img {
+    position: absolute;
+    max-width: 165px;
+}
+.section-get-in-touch  .gt-img.one {
+    right: 50px;
+}
+.section-get-in-touch .gt-img.two {
+    right: 28px;
+    bottom:120px;
+}
+.section-get-in-touch  .gt-img.three {
+    bottom: 40px;
+    right: 140px;
+}
+.climbing-card-title, .little-bear-title, .yoga-fitness-title, .youth-programs-title, .tours-guiding-title, .special-events-title, .mobile-header-title, .meet-team-title, .get-gear-title, .contact-title{
+    display: none;
+}
+
+@media (max-width: 850px){
+    h1{
+        margin: 0px;
+    }
+    .section-main-box{
+        scroll-snap-type: y proximity;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    .mobile-gallery{
+        background-image: url('../images/banners/main-banner.jpg');
+        width: 100%;
+        height: 40vh;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+    .mobile-event-heading{
+        width: 100%;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        color: #F7F2E6;
+        font-size: 28pt;
+        background-color: #90341C;
+        text-align: center;
+    }
+    .mobile-header-title{
+        width: 100%;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        color: #90341C;
+        font-size: 28pt;
+        background-color: #E5DAC0;
+        text-align: center;
+    }
+    .home-banner{
+        height: 100%;
+        background-color: #90341C;
+        background-image: none;
+    }
+    
+    .climbing-coffee{
+        margin-bottom: 0px !important;
+    }
+    .climbing-coffee .heading{
+        width: 100%;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        color: #90341C;
+        font-size: 28pt;
+        background-color: #E5DAC0;
+        text-align: center;
+    }
+    a.accordian-title-link{
+        text-decoration: none;
+    }
+    .event-link{
+        width: 100%;
+        display: block;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        color: #F7F2E6;
+        font-size: 28pt;
+        background-color: #90341C;
+        text-align: center;
+        padding-top: 1rem;  
+        user-select: none;
+    }
+    .pt-4, .py-4 {
+        padding-top: -1.5rem !important;
+    }
+    .event-box{
+        width: 50vh;
+        border-radius: 0%;
+        background-color: #90341C;
+        margin-top: 0pt  !important;
+        padding-top: 5pt !important;
+        padding-left: 24pt !important;
+    }
+    .event-heading{
+        display: none;
+    }
+    .event-list .event-title{
+        font-family: 'Articulat CF v2';
+        font-weight: bold;
+        font-size: 16pt;
+        color: #F4C597;
+    }
+    .event-list .event-description{
+        font-family: 'Articulat CF v2';
+        font-weight: medium;
+        color: #F7F2E6;
+        border-bottom: none;
+    }
+    .event-list .more-info-link{
+        font-family: 'Articulat CF v2';
+        font-weight: bold;
+        font-size: 16pt;
+        color: #3D0B18;
+    }
+    .home-banner > .row{
+        display: none;
+    }
+    .home-banner:focus-within > .row{
+        display: block;
+    }
+    .home-banner span.down-arrow{
+        display: none;
+    }
+    .home-banner:focus-within span.right-arrow{
+        display: none;
+    }
+    .home-banner:focus-within span.down-arrow{
+        display: inline;
+    }
+    .home-banner h5.event-link{
+        margin-bottom: 0px !important;
+    }
+    .sub-text{
+        display: none;
+    }
+
+
+    .climbing-card-title, .little-bear-title, .yoga-fitness-title, .youth-programs-title, .tours-guiding-title, .special-events-title, .meet-team-title, .get-gear-title, .contact-title{
+        width: 100%;
+        display: block;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        color: #90341C;
+        font-size: 28pt;
+        background-color: #E5DAC0;
+        text-align: center;
+    }
+    .meet-team-title, .get-gear-title{
+        display: block;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        color: #90341C;
+        font-size: 28pt;
+        text-align: center;
+    }
+
+    
+    .section-main-box .container {
+        padding: 0px;
+    }
+    .section-main-box .container .row {
+        margin-bottom: 0px;
+    }
+    .climbing-card, .little-bear, .yoga-fitness, .youth-programs, .tours-guiding, .special-events, .section-default{
+        margin-bottom: 2px !important;
+        padding: 0 !important;
+        left: 0px;
+        scroll-snap-align: start;
+    }
+    
+    
+    
+    .section-main-box .six-set-container{
+        display: none;
+        height: 100vh;
+        width: 100vw;
+    }
+    .section-main-box .six-set-container .d-flex{
+        flex-direction: column;
+    }
+    .six-set-container .d-flex .left img{
+        padding-top: 1rem;
+        width: 100vw;
+        height: 50vh;
+    }
+    .six-set-container .description{
+        padding: 1rem;
+        font-family: "Artciulat CF v2";
+        text-align: center;
+        font-size: 16pt;
+        color: #3D0B18;
+        font-weight: 500;
+    }
+
+    .climbing-coffee:focus-within + .heading{
+        background-color: #F7F2E6;
+    }
+    .climbing-coffee:focus-within > .sub-text{
+        display:flex;
+        text-align: center;
+    }
+    .climbing-coffee span.down-arrow{
+        display: none;
+    }
+    .climbing-coffee:focus-within span.right-arrow{
+        display: none;
+    }
+    .climbing-coffee:focus-within span.down-arrow{
+        display: inline;
+    }
+
+
+    .climbing-card:focus-within > .six-set-container{
+        display: flex;
+    }
+    .climbing-card span.down-arrow{
+        display: none;
+    }
+    .climbing-card:focus-within span.right-arrow{
+        display: none;
+    }
+    .climbing-card:focus-within span.down-arrow{
+        display: inline;
+    }
+
+
+    .little-bear:focus-within > .six-set-container{
+        display: flex;
+    }
+    .little-bear span.down-arrow{
+        display: none;
+    }
+    .little-bear:focus-within span.right-arrow{
+        display: none;
+    }
+    .little-bear:focus-within span.down-arrow{
+        display: inline;
+    }
+
+    .yoga-fitness:focus-within > .six-set-container{
+        display: flex;
+    }
+    .yoga-fitness span.down-arrow{
+        display: none;
+    }
+    .yoga-fitness:focus-within span.right-arrow{
+        display: none;
+    }
+    .yoga-fitness:focus-within span.down-arrow{
+        display: inline;
+    }
+
+    .youth-programs:focus-within > .six-set-container{
+        display: flex;
+    }
+    .youth-programs span.down-arrow{
+        display: none;
+    }
+    .youth-programs:focus-within span.right-arrow{
+        display: none;
+    }
+    .youth-programs:focus-within span.down-arrow{
+        display: inline;
+    }
+
+    .tours-guiding:focus-within > .six-set-container{
+        display: flex;
+    }
+    .tours-guiding span.down-arrow{
+        display: none;
+    }
+    .tours-guiding:focus-within span.right-arrow{
+        display: none;
+    }
+    .tours-guiding:focus-within span.down-arrow{
+        display: inline;
+    }
+
+    .special-events:focus-within > .six-set-container{
+        display: flex;
+    }
+    .special-events span.down-arrow{
+        display: none;
+    }
+    .special-events:focus-within span.right-arrow{
+        display: none;
+    }
+    .special-events:focus-within span.down-arrow{
+        display: inline;
+    }
+
+    .title {
+        display: none;
+    }
+
+
+    .section-default{
+        height: 0vh;
+    }
+    .section-buttons{
+        display: none;
+    }
+    .section-default .heading {
+        display: none;
+    }
+    .section-default .sub-text{
+        display: none;
+    }
+    /* .section-default .row {
+        display: none;
+    } */
+
+
+    /* .section-default div .swiper-container{
+        display: none;
+    } */
+
+    .section-default .container {
+        display: none;
+    }
+    .section-default .text-center{
+        display: none;
+    }
+    .section-default:focus-within {
+        height: 100vh;
+    }
+    .section-default:focus-within .meet-team-title{
+        display: none;
+    }
+    .section-default:focus-within .heading{
+        display: block;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        font-size: 28pt;
+        color: #90341C;
+        font-weight: normal;
+    }
+    .section-default:focus-within .sub-text{
+        display: block;
+    }
+    .section-default:focus-within > .row{
+        display: block;
+    }
+    .section-default:focus-within > div {
+        display: block;
+    }
+    .section-default:focus-within > div > .swiper-container{
+        display: block;
+    }
+    .section-default:focus-within > .container{
+        display: block;
+    }
+    .section-default:focus-within .text-center{
+        display: block;
+    }
+    .section-default .custom-bg{
+        font-size: 22pt;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        font-weight: normal;
+        color: #F7F2E6;
+    }
+    .section-default span.down-arrow{
+        display: none;
+    }
+    .section-default:focus-within span.right-arrow{
+        display: none;
+    }
+    .section-default:focus-within span.down-arrow{
+        display: inline;
+    }
+
+
+    .section-get-gear{
+        /* padding-top: 0 !important; */
+        /* padding-bottom: 0px !important;  */
+        height: 0vh;
+    }
+    .section-get-gear .heading, .sub-text {
+        display: none;
+    }
+    .section-get-gear > .container{
+        display: none;
+    }
+    .section-get-gear .custom-bg{
+        font-size: 22pt;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        font-weight: normal;
+        color: #F7F2E6;
+    }
+
+    .section-get-gear:focus-within{
+        height: 100vh;
+    }
+    .section-get-gear:focus-within .get-gear-title{
+        display: none;
+    }
+    .section-get-gear:focus-within .heading {
+        display: block;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        font-size: 28pt;
+        color: #90341C;
+        font-weight: normal;
+    }
+    .section-get-gear:focus-within .sub-text {
+        display: block;
+    }
+    .section-get-gear:focus-within > .container {
+        display: block;
+    }
+    .section-get-gear span.down-arrow{
+        display: none;
+    }
+    .section-get-gear:focus-within span.right-arrow{
+        display: none;
+    }
+    .section-get-gear:focus-within span.down-arrow{
+        display: inline;
+    }
+
+
+    .section-get-in-touch{
+        height: 0vh;
+        padding-top: 0px !important;
+    }
+    .section-get-in-touch .heading, .sub-text{
+        display: none;
+    }
+    .section-get-in-touch .container.get-in-touch {
+        width: 100%;
+        padding: 0px !important;
+    }
+    .section-get-in-touch > .container{
+        display: none;
+    }
+    .section-get-in-touch > img{
+        display: none;
+    }
+    .section-get-in-touch input{
+        font-family: "Articulat CF v2";
+        font-style: oblique;
+        font-size: 18pt;
+        color: #c9c3ac;
+        background-color: #F7F2E6;
+    }
+    .section-get-in-touch textarea{
+        font-family: "Articulat CF v2";
+        font-style: oblique;
+        font-size: 18pt;
+        color: #c9c3ac;
+        background-color: #F7F2E6;
+    }
+    .section-get-in-touch .custom-bg{
+        font-family: "Veneer";
+        font-weight: normal;
+        font-size: 22pt;
+        color: #F7F2E6;
+    }
+    .section-get-in-touch .mobile-hold-images img{
+        left: 0px;
+        width: 25%;
+    }
+    .section-get-in-touch:focus-within{
+        height: 100vh;
+        background-color: #E5DAC0;
+    }
+    .section-get-in-touch:focus-within .contact-title{
+        display: block;
+        font-family: 'Veneer', Helvetica, Arial, Sans-Serif, serif;
+        font-size: 28pt;
+        color: #90341C;
+        font-weight: normal;
+    }
+    .section-get-in-touch:focus-within .sub-text{
+        display: block;
+        font-family: 'Articulat CF v2';
+        font-size: 16pt;
+        color: #3D0B18;
+        font-weight: 500;
+    }
+    .section-get-in-touch:focus-within > .container{
+        display: block;
+    }
+    .section-get-in-touch span.down-arrow{
+        display: none;
+    }
+    .section-get-in-touch:focus-within span.right-arrow{
+        display: none;
+    }
+    .section-get-in-touch:focus-within span.down-arrow{
+        display: inline;
+    }
+}

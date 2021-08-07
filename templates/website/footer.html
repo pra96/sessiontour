@@ -1,0 +1,44 @@
+{% load static %}
+<footer class="footer">
+    <div class="row">
+        <div class="col-md-4">
+                <img src="{% static 'images/logos/footer-logo.png' %}" alt="" class="footer-logo">
+        </div>
+        <div class="col-md-8 py-5">
+            <div class="d-flex flex-column flex-md-row footer-menus-options">
+                <div class="foot-menu-links d-flex menu flex-column mr-0 mr-sm-0">
+                    {% include 'website/main-menu.html' %}
+                </div>
+                <div class="d-flex options flex-column mr-0 mr-sm-2">
+                    {% include 'website/main-menu-tabs.html' %}
+                </div>
+                <span class="responsive-phone-no"><a href="tel:=1-915-308-7210" class="phone-no">(915)308-7210</a></span>
+                <div class="address d-flex address flex-column mr-0 mr-sm-2">
+                    <span class="flex-row">1775 Cimarron Rialto Square<br> El Paso, TX 79912<br>
+                        <!-- TODO: add link to google maps -->
+                        Map
+                    </span>
+                    <span>Hours: <br class="responsive-br">m-th 9-9 <br>f-su 9-11</span>
+                </div>
+                <div class="social d-flex flex-column mr-0 mr-sm-1">
+                    <span class="phone-no mb-1"><a href="tel:=1-915-308-7210" class="phone-no">(915)308-7210</a></span>
+                    <div class="d-flex social-links ">
+                        <a href="https://www.facebook.com/sessionsclimbingllc" target="_blank" class="social-link mr-1">
+                             <img src="{% static 'images/socials/facebook_f.png' %}" alt="">
+                         </a>
+                         <a href="https://www.twitter.com/sessionsclimbin" target="_blank" class="social-link mr-1">
+                             <img src="{% static 'images/socials/twitter_f.png' %}" alt="">
+                         </a>
+                         <a href="https://www.instagram.com/sessionsclimbing" target="_blank" class="social-link mr-1">
+                             <img src="{% static 'images/socials/insta_f.png' %}" alt="">
+                         </a>
+                         <a href="https://www.youtube.com/channel/UCRkbBs5059f3nKYXuXp7ddw" target="_blank" class="social-link mr-1">
+                             <img src="{% static 'images/socials/youtube_f.png' %}" alt="">
+                         </a>
+                    </div>
+                    <span class="ripe-info-link">branding & design by <a href="#" class="ripe-link">Ripe Inc ></a></span>
+               </div>
+            </div>
+        </div>
+    </div>
+</footer>

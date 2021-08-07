@@ -1,0 +1,41 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="section section-bg-reserve">
+    {% include 'huecotours/reserve-nav-bar.html' %}
+</div>
+<div class="section section-main-box">
+    <div class="row">
+        <div class="col-sm-12 justify-content-center">
+            <h3 class="heading-reserve">Below are our prices for tours and a general description of each.</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box-element">
+                <table class="table">
+					<tr>
+                        <td class="tour-heading"><strong>Tour Type</strong></td>
+                        <td class="tour-heading"><strong>Tour Style</strong></td>
+                        <td class="tour-heading"><strong>General Description</strong></td>
+                        <td class="tour-heading"><strong>Max Clients</strong></td>
+                        <td class="tour-heading"><strong>Typical Cost</strong></td>
+
+					</tr>
+
+                    {% for key, val in  data.items%}
+                       <tr>     
+                        <th class="tour-listing">{{val.tourType}}</th>
+                        <th class="tour-listing">{{val.tourStyle}}</th>
+                        <th class="tour-listing">{{val.tourDescription}}</th>
+                        <th class="tour-listing">{{val.maxPersonAllowed}}</th>
+                        <th class="tour-listing">{{val.cost}}</th>
+                        </tr>
+                    {% endfor %}
+				</table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

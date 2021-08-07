@@ -1,0 +1,120 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+<!--TODO change images for each bullet.
+    TODO add links for membership and classes
+-->
+{% block content %}
+<div class="section section-main-box py-5">
+    <div class="row no-gutters">
+        <div class="col-md-12 mb-5">
+            <h1 class="heading">Youth Climbing Programs</h1>
+            <p class="sub-text">We have a variety of youth climbing programs for children of all ages and skill
+            levels. Check out the programs we have to offer and reach out to our coaches for more information!</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/logos/logo-art.png' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3">
+                            <h3 class="title">Session Masters</h3>
+                            <p class="description">This is an invitation only team that represents Sessions Climbing +
+                            Fitness. Session Masters are sponsored by the gym and are hand selected by your trained
+                            coaching staff from any of the youth team categories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/logos/logo-art.png' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Session Elites</h3>
+                            <p class="description">The Session Elites is for athletes driven by competition, highly
+                            motivated, and who love climbing. Athletes qualify before joining the Session Elite Team.
+                            Session Elites are split into two training sections: Elite A for ages 12-19 and Elite B
+                            for ages 5-12.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/logos/logo-art.png' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Session Experts - Group A</h3>
+                            <p class="description">This is an open team that accepts all athletes. The purpose of the
+                            Session Experts is to prepare athletes for indoor climbing competitions in a variety
+                            of disciplines. Age restriction for youth team Recreational A is 16-19.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/logos/logo-art.png' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Session Experts - Group B</h3>
+                            <p class="description">This is an open team that accepts all athletes. The purpose of the
+                            Session Experts is to prepare athletes for indoor climbing competitions in a variety
+                            of disciplines. Age restriction for youth team Recreational A is 12-15.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/logos/logo-art.png' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 py-2">
+                            <h3 class="title">Session Scouts - Group A</h3>
+                            <p class="description">The Session Scouts will focus on learning the fundamentals of
+                            climbing and how to improve their climbing IQ, movement, strength, and mental fortitude.
+                            Age restriction for Session Scouts - Group A is 9-11.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/logos/logo-art.png' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 py-2">
+                            <h3 class="title">Session Scouts - Group B</h3>
+                            <p class="description">The Session Scouts will focus on learning the fundamentals of
+                            climbing and how to improve their climbing IQ, movement, strength, and mental fortitude.
+                            Age restriction for Session Scouts - Group A is 5-9.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center py-4">
+                    <!-- TODO: Make these buttons work -->
+                    <button class="btn custom-bg mr-4">Book Assessment</button>
+                    <button class="btn custom-bg">Sign Up ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

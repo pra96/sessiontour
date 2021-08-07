@@ -1,0 +1,65 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="section section-bg-reserve">
+    {% include 'huecotours/reserve-nav-bar.html' %}
+</div>
+<div class="section section-main-box">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box-element">
+                <table class="table">
+                    <h1 class="heading-reserve">Here are our publicly listed guides.
+                        Feel free to reach out to them for private tours:</h1>
+
+                        
+					<tr>
+                        <td class="tour-heading">Guide</td>
+                        <td class="tour-heading">Name</td>
+                        <td class="tour-heading">Phone Number</td>
+                        <td class="tour-heading">Email</td>
+                        <td class="tour-heading">Description</td>
+                        <td class="tour-heading">Price</td>
+					</tr>
+
+                    {% for key, val in  data.items%}
+                       <tr>     
+                        <th class="tour-listing">{{val.guide}}</th>
+                        <th class="tour-listing">{{val.name}}</th>
+                        <th class="tour-listing">{{val.phoneNumber}}</th>
+                        <th class="tour-listing">{{val.email}}</th>
+                        <th class="tour-listing">{{val.description}}</th>
+                        <th class="tour-listing">{{val.price}}</th>
+                        </tr>
+                    {% endfor %}
+				</table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box-element">
+                <table class="table">
+                    <h1 class="heading-reserve">Here are our unlisted guides.
+                        Call 915-308-7210 to request any of the following guides:</h1>
+					<tr>
+                        <td class="tour-heading">Guide #</td>
+                        <td class="tour-heading">Name</td>
+                        <td class="tour-heading">Description</td>
+                        <td class="tour-heading">Price</td>
+					</tr>
+                    <tr>
+                        <td class="tour-listing">201</td>
+                        <td class="tour-listing">Albert Alvarez</td>
+                        <td class="tour-listing">Albert has a passion for climbing loves everything there is to
+                        know about climbing. Always willing to share his knowledge, he is one of our best and
+                        most outstanding guides. His experience, expertise, knowledge, and stories are priceless!</td>
+                        <td class="tour-listing">$200 + $20 / Person</td>
+                    </tr>
+				</table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+/* Import stylesheets for site sections. */
+@import url("fonts.695f8065e6d2.css");
+@import url("header.a1db1cc60649.css");
+@import url("sections.fc464980a3b7.css");
+@import url("swiper.5cf7e4e8da1c.css");
+@import url("footer.b671b1aba09b.css");
+@import url("shop.171556278ec1.css");
+@import url("reserve.ec62d95a78b2.css");
+
+
+/* Set up defaults for major HTML tags and bootstrap overwrites. */
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #F7f2E6;
+    width: 100%;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.nav-link {
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 13pt;
+    line-height: 15pt;
+}
+
+ul {
+    float: left;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+

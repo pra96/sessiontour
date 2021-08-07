@@ -1,0 +1,26 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="section section-bg-reserve">
+    {% include 'events/events-nav-bar.html' %}
+</div>
+<div class="section section-main-box">
+    <div class="row">
+        <div class="col-sm-12 justify-content-center">
+            <h2 class="heading">{{ title }}</h2>
+            <h3 class="sub-text">Date: {{ date }} - Time: {{ time }}</h3>
+            <div style="display: flex; justify-content: center">
+                <img src="{{ image }}" alt="" style="width: 25%; height: 25%">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box-element justify-content-center">
+                <h2 class="heading-reserve">{{ description }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

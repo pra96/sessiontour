@@ -1,0 +1,26 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="section section-bg-shop">
+    {% include 'shop/shop-nav-bar.html' %}
+</div>
+<div class="section section-main-box">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="{{ product.image_url }}" alt="">
+            <div class="box-element product">
+                <h6 class="shop-heading"><strong>{{ product.name }}</strong></h6>
+                <hr>
+                <button data-product="{{ product.id }}" data-action="add" class="btn
+                 btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                <a class="btn btn-outline-success" href="#">View</a>
+                <h4 class ="shop-heading product-price"><strong>${{ product.price | floatformat:2 }}</strong></h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

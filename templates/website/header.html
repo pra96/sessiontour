@@ -1,0 +1,57 @@
+{% load static %}
+<header class="header" id="header">
+    <div class="row no-gutters">
+        <div class="header-container col-md-6">
+            <div class="logo-area">
+                <div class="col-xs-6">
+                    <img src="{% static 'images/logos/logo-art.png' %}" alt="" class="logo-art">
+                    <a href="{% url 'homepage' %}"><img src="{% static 'images/logos/logo-01.png' %}" alt="" class="logo"></a>
+                </div>
+                <div class="icon-box col-xs-6">
+                    <a href="#my-drop-down" class="icon" onclick="respScreen()">
+                        <i class="fa fa-bars fa-border"></i>
+                    </a>
+                </div>
+            </a>
+            </div>
+            
+        </div>
+        
+        <div class="drop-down col-12 col-md-6" id="my-drop-down">
+            <a class="exit-button" href="{% url 'homepage' %}" onclick="respScreen()">
+                <div class="close-menu">
+                    <span>&#10005;</span>
+                </div>
+            </a>
+            <div class="header-menus-options d-flex flex-column flex-md-row py-3 px-2">
+                
+                <div class="d-flex menu flex-column ml-0 mr-0 justify-content-start">
+                    <a class="home-link" href="{% url 'homepage' %}">HOME</a>
+                    {% include 'website/main-menu.html' %}
+                </div>
+                <div class="option d-flex flex-column mr-0 mr-sm-3">
+                    {% include 'website/main-menu-tabs.html' %}
+                 </div>
+                 <div class="d-flex flex-column">
+
+                        
+                     <span class="phone-no"><a href="tel:+1-915-308-7210" class="phone-no">(915)308-7210</a></span>
+                     <div class="d-flex social-links">
+                         <a href="https://www.facebook.com/sessionsclimbingllc" target="_blank" class="social-link mr-1">
+                             <img src="{% static 'images/socials/facebook_h.png' %}" alt="">
+                         </a>
+                         <a href="https://www.twitter.com/sessionsclimbin" target="_blank" class="social-link mr-1">
+                             <img src="{% static 'images/socials/twitter_h.png' %}" alt="">
+                         </a>
+                         <a href="https://www.instagram.com/sessionsclimbing" target="_blank" class="social-link mr-1">
+                             <img src="{% static 'images/socials/insta_h.png' %}" alt="">
+                         </a>
+                         <a href="https://www.youtube.com/channel/UCRkbBs5059f3nKYXuXp7ddw" target="_blank" class="social-link mr-1">
+                             <img src="{% static 'images/socials/youtube_h.png' %}" alt="">
+                         </a>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </header>

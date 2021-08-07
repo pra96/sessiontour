@@ -1,0 +1,330 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mobile-gallery"></div>
+<!--section-banner-->
+<div class="section-bg home-banner" id="home-banner">
+    <a href="#upcoming-events-button" class="accordian-title-link">
+        <custom-button tabindex="0" role="button" class="upcoming-events-button" id="upcoming-events-button">
+            <h5 class="event-link">
+                <span class="right-arrow">&#9656;</span>
+                <span class="down-arrow">&#9662;</span>
+                UPCOMING EVENTS
+            </h5>
+        </custom-button>
+    </a>
+    <div class="row no-gutters">
+        <div class="col-md-3">
+            {% include 'website/events-holder.html' %}
+        </div>
+    </div>
+</div>
+
+<!--section-world-class-->
+<div class="section section-main-box py-5">
+    <div class="row no-gutters">
+        <div class="climbing-coffee col-md-12 mb-5">
+            <a href="#climbing-coffee-button" class="accordian-title-link">
+                <custom-button tabindex="0" role="button" class="#climbing-coffee-button" id="#climbing-coffee-button">
+                    <h1 class="heading">
+                        <span class="right-arrow">&#9656;</span>
+                        <span class="down-arrow">&#9662;</span>
+                        WORLD CLASS CLIMBING + WORLD CLASS COFFEE
+                    </h1>
+                </custom-button>
+            </a>
+            <p class="sub-text">We are a community of one, and we use climbing to grow in body,
+                mind, and spirit. The coffee is fuel to get us there, the gear is for bragging
+                about, and the weights help us push our limits. Come see what you've been missing;
+                or if you're steeped in the sport, come share your epic adventure stories.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="climbing-card col-md-6 mb-4">
+                <a href="#climbing-card-button" class="accordian-title-link">
+                    <custom-button tabindex="0" role="button" class="#climbing-card-button" id="#climbing-card-button">
+                        <h1 class="climbing-card-title" id="climbing-card-title">
+                            <span class="right-arrow">&#9656;</span>
+                            <span class="down-arrow">&#9662;</span>
+                            Climbing
+                        </h1>
+                    </custom-button>
+                </a>
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/world-class.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3">
+                            <custom-button tabindex="0" role="button"><h3 class="title">Climbing</h3></custom-button>
+                            <p class="description">We have tons of climbing, get some!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="little-bear col-md-6 mb-4">
+                <a href="#little-bear-button" class="accordian-title-link">
+                    <custom-button tabindex="0" role="button" class="#little-bear-button" id="#little-bear-button">
+                        <h1 class="little-bear-title">
+                            <span class="right-arrow">&#9656;</span>
+                            <span class="down-arrow">&#9662;</span>
+                            Cafe & Lounge
+                        </h1>
+                    </custom-button>
+                </a>
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_2.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Cafe and Lounge</h3>
+                            <p class="description">We brew a variety of coffee and cook up a variety of treats. Come
+                            join us at our lounge to keep yourself fuel for your climbing session or work session!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="yoga-fitness col-md-6 mb-4">
+                <a href="#yoga-fitness-button" class="accordian-title-link">
+                    <custom-button tabindex="0" role="button" class="#yoga-fitness-button" id="#yoga-fitness-button">
+                        <h1 class="yoga-fitness-title">
+                            <span class="right-arrow">&#9656;</span>
+                            <span class="down-arrow">&#9662;</span>
+                            yoga and fitness
+                        </h1>
+                    </custom-button>
+                </a>
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/yoga-fit.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">yoga and fitness</h3>
+                            <p class="description">In house yoga studio where you can find your zen before or after climbing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="youth-programs col-md-6 mb-4">
+                <a href="#youth-programs-button" class="accordian-title-link">
+                    <custom-button tabindex="0" role="button" class="#youth-programs-button" id="#youth-programs-button">
+                        <h1 class="youth-programs-title">
+                            <span class="right-arrow">&#9656;</span>
+                            <span class="down-arrow">&#9662;</span>
+                            youth programs
+                        </h1>
+                    </custom-button>
+                </a>
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_4.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">youth programs</h3>
+                            <p class="description">We have a vision of building better climbers and showing the world that
+                                                   the southwest has world class talent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tours-guiding col-md-6 mb-4">
+                <a href="#tours-guiding-button" class="accordian-title-link">
+                    <custom-button tabindex="0" role="button" class="#tours-guiding-button" id="#tours-guiding-button">
+                        <h1 class="tours-guiding-title">
+                            <span class="right-arrow">&#9656;</span>
+                            <span class="down-arrow">&#9662;</span>
+                            Tours / Guiding
+                        </h1>
+                    </custom-button>
+                </a>
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/tours-guiding.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 py-2">
+                            <h3 class="title">tours / guiding</h3>
+                            <p class="description">Let us help you transition from indoor to outdoor rock climbing.
+                            We have years of experience guiding clients and offer gym to crag lessons to help elevate
+                            your climbing game!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="special-events col-md-6 mb-4">
+                <a href="#special-events-button" class="accordian-title-link">
+                    <custom-button tabindex="0" role="button" class="#special-events-button" id="#special-events-button">
+                        <h1 class="special-events-title">
+                            <span class="right-arrow">&#9656;</span>
+                            <span class="down-arrow">&#9662;</span>
+                            Special Events
+                        </h1>
+                    </custom-button>
+                </a>
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_6.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 py-2">
+                            <h3 class="title">special events</h3>
+                            <p class="description">Check out what special events are coming to the area from local
+                            bouldering competitions, film festivals, gear exchanges, and other special events.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-buttons row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center py-4">
+                    <button class="btn custom-bg mr-4">Memberships ></button>
+                    <button class="btn custom-bg">Classes ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--section-meet-team-->
+<div class="section section-default py-5">
+    <a href="#meet-team-button" class="accordian-title-link">
+        <custom-button tabindex="0" role="button" class="#meet-team-button" id="#meet-team-button">
+            <h5 class="meet-team-title">
+                <span class="right-arrow">&#9656;</span>
+                <span class="down-arrow">&#9662;</span>
+                Meet Our Team
+            </h5>
+        </custom-button>
+    </a>
+    <div class="row">
+        <div class="col-md-12 mb-5">
+            <h1 class="heading"><span class="down-arrow">&#9662;</span>Meet Our Team</h1>
+            <p class="sub-text">We have an amazing staff that will ensure your experience is awesome!</p>
+        </div>
+    </div>
+    {% include 'website/team-slider.html' %}
+     <div class="row">
+         <div class="col-md-12 text-center">
+             <a href="{% url 'about_us' %}">
+                <button class="btn custom-bg">MORE about us ></button>
+             </a>
+         </div>
+     </div>
+</div>
+<!--section-get-gear-->
+<div class="section section-get-gear py-5 main">
+    <a href="#get-gear-button" class="accordian-title-link">
+        <custom-button tabindex="0" role="button" class="#get-gear-button" id="#get-gear-button">
+            <h5 class="get-gear-title">
+                <span class="right-arrow">&#9656;</span>
+                <span class="down-arrow">&#9662;</span>
+                Get Gear
+            </h5>
+        </custom-button>
+    </a>
+
+    <div class="row">
+        <div class="col-md-12 mb-5">
+            <h1 class="heading"><span class="down-arrow">&#9662;</span>GET GEAR</h1>
+            <p class="sub-text">Show your support and get some sweet swag from our gear shop!
+                Check out what we have in stock below:</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                    <div class="swiper-container get-gear">
+                        <div class="swiper-wrapper">
+                            {% for product in products %}
+                            <div class="swiper-slide product-container">
+                                <img src="{{ product.image_url }}" alt="" class="product-img">
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <!--arrows-->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="{% url 'catalog' %}">
+                    <button class="btn custom-bg">shop online ></button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--section-get-in-touch-->
+<div class="section section-get-in-touch py-5">
+    <a href="#contact-button" class="accordian-title-link">
+        <custom-button tabindex="0" role="button" class="#contact-button" id="#contact-button">
+            <h5 class="contact-title">
+                <span class="right-arrow">&#9656;</span>
+                <span class="down-arrow">&#9662;</span>
+                Get in Touch
+            </h5>
+        </custom-button>
+    </a>
+    <a name="contactus"></a>
+    <img src="{% static 'images/gt1.png' %}" alt="" class="gt-img one">
+    <img src="{% static 'images/gt2.png' %}" alt="" class="gt-img two">
+    <img src="{% static 'images/gt3.png' %}" alt="" class="gt-img three">
+    <div class="container get-in-touch py-5">
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <h1 class="heading">Get in touch</h1>
+                <p class="sub-text">Feel free to reach out to us using the form below. We'd be happy to answer any and
+                all of your questions related to our programs, facility, events, and youth teams.</p>
+            </div>
+        </div>
+        <form method="POST">{% csrf_token %}
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" name="contact_name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" name="contact_email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Phone Number" name="contact_phone" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Message" name="contact_message" required></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center mt-4">
+                    <!-- TODO: code submission text -->
+                    <input class="btn custom-bg" type="submit">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <h1 {% if message.tags %} class="sub-text {{ message.tags }}"{% endif %}>{{ message }}</h1>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <div class="mobile-hold-images">
+                    <img src="{% static 'images/gt1.png' %}" alt="" class="gt-img one">
+                    <img src="{% static 'images/gt2.png' %}" alt="" class="gt-img two">
+                    <img src="{% static 'images/gt3.png' %}" alt="" class="gt-img three">
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

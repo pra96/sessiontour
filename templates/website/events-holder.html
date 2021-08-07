@@ -1,0 +1,17 @@
+<div class="card event-box px-3 py-4 mt-5 ml-3 ">
+    <h5 class="event-heading">UPCOMING EVENTS</h5>
+    <div class="d-flex flex-column events-list">
+        {% for event in events %}
+        <div class="event-list">
+            <h5 class="event-title">{{ event.date_time.date }}</h5>
+            <p class="event-description">{{ event.title }}
+                <a href="{% url 'event_view' event_id=event.id %}" class="more-info-link">more info ></a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+

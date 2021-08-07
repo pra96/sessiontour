@@ -1,0 +1,41 @@
+/* Import stylesheets for site sections. */
+@import "fonts.css";
+@import "header.css";
+@import "sections.css";
+@import "swiper.css";
+@import "footer.css";
+@import "shop.css";
+@import "reserve.css";
+
+
+/* Set up defaults for major HTML tags and bootstrap overwrites. */
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #F7f2E6;
+    width: 100%;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.nav-link {
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 13pt;
+    line-height: 15pt;
+}
+
+ul {
+    float: left;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+

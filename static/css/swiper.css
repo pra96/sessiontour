@@ -1,0 +1,72 @@
+/* Set up defaults for swiper */
+
+.swiper-container.meet-our-team .swiper-button-next, .swiper-container.meet-our-team .swiper-button-prev {
+    color: #90341C;
+}
+.swiper-container.meet-our-team .swiper-button-prev:after, .swiper-container.meet-our-team .swiper-container-rtl .swiper-button-next:after{
+    font-size: 34px;
+    font-weight: bold;
+    display: block;
+    border-radius: 50px;
+}
+.swiper-container.meet-our-team .swiper-button-next:after, .swiper-container.meet-our-team .swiper-container-rtl .swiper-button-prev:after{
+    font-size: 34px;
+    font-weight: bold;
+}
+.polaroid .team-img{
+    display: block;
+    width: 99%;
+    height: 60%;
+}
+
+.polaroid .team-block{
+    display: block;
+    text-align: center;
+}
+
+.polaroid .team-info{
+    width: 92%;
+    margin:0 auto;
+    font-size: 12px;
+    text-align:center;
+    color: #90341C;
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    line-height: 16px;
+}
+.section-get-gear .heading{
+    font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 44px;
+    text-align: center;
+    color: #90341C;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+.section-get-gear .sub-text{
+    color: #491B26;
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 17px;
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    line-height: 22px;
+}
+.swiper-container.get-gear .swiper-button-next, .swiper-container.get-gear .swiper-button-prev{
+    color: #90341C;
+}
+.swiper-container.get-gear .swiper-button-prev:after, .swiper-container.get-gear .swiper-container-rtl .swiper-button-next:after{
+    font-size: 34px;
+    font-weight: bold;
+    display: block;
+    border-radius: 50px;
+}
+.swiper-container.get-gear .swiper-button-next:after, .swiper-container.get-gear .swiper-container-rtl .swiper-button-prev:after{
+    font-size: 34px;
+    font-weight: bold;
+}
+.swiper-container.get-gear .product-container{
+    width: 242px !important;
+    text-align:center;
+}
+.swiper-container.get-gear .product-container .product-img{
+    max-width: 100%;
+}

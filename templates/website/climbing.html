@@ -1,0 +1,117 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+<!--TODO change images for each bullet.
+    TODO update descriptions for each item
+    TODO add links for membership and classes
+-->
+{% block content %}
+<!--section-banner-->
+<div class="section section-bg climbing-banner">
+    <div class="row no-gutters">
+        <div class="col-md-3">
+            {% include 'website/events-holder.html' %}
+        </div>
+    </div>
+</div>
+
+<!-- main section -->
+<div class="section section-main-box py-5">
+    <div class="row no-gutters">
+        <div class="col-md-12 mb-5">
+            <h1 class="heading">WORLD CLASS CLIMBING</h1>
+            <p class="sub-text">We have a full service climbing gym to meet your every need!</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/world-class.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3">
+                            <h3 class="title">Lead Climbing</h3>
+                            <p class="description">Climb our 50ft walls!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/bouldering.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Bouldering</h3>
+                            <p class="description">Boulder in our cave and competition sized walls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_3.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Speed Wall</h3>
+                            <p class="description">Try out our regulation speed wall.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_4.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Top Rope</h3>
+                            <p class="description">Top rope on a variety of walls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_5.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 py-2">
+                            <h3 class="title">ATP Boards</h3>
+                            <p class="description">Train hard on our state of the art ATP boards!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/training-area.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 py-2">
+                            <h3 class="title">Training Equipment</h3>
+                            <p class="description">We have everything you need to get stronger, every session.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center py-4">
+                    <!-- TODO: Make these buttons work -->
+                    <button class="btn custom-bg mr-4">Memberships ></button>
+                    <button class="btn custom-bg">Classes ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

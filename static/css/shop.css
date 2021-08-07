@@ -1,0 +1,127 @@
+/* Styling for shop */
+.section-bg-shop {
+    width: 100%;
+    height: 75px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+.shop-heading {
+    font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 13pt;
+    line-height: 15pt;
+}
+
+.box-element {
+	box-shadow: #e5dac0 0 0 16px;
+	background-color: #F7f2E6;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.thumbnail {
+	width: 100%;
+	height: 360px;
+	-webkit-box-shadow: -1px -3px 5px -2px #e5dac0;
+    -moz-box-shadow: -1px -3px 5px -2px #e5dac0;
+    box-shadow: -1px -3px 5px -2px #e5dac0;
+}
+
+.product-price {
+    display: inline-block;
+    float: right;
+}
+
+.product {
+	border-radius: 0 0 4px 4px;
+}
+
+.bg-dark {
+	background-color: #491B26 !important;
+}
+
+#cart-icon {
+	width:25px;
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#cart-total {
+	display: block;
+	text-align: center;
+	color:#e5dac0;
+	background-color: #90341C;
+	width: 20px;
+	height: 25px;
+	border-radius: 50%;
+	font-size: 14px;
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12 {
+	margin-top: 10px;
+}
+
+.btn {
+	border-radius: 0;
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 13pt;
+    line-height: 15pt;
+}
+
+.theme-btn {
+    background-color: #e5dac0;
+}
+
+.row-image {
+	width: 100px;
+}
+
+.form-field {
+	width:250px;
+	display: inline-block;
+	padding: 5px;
+}
+
+.cart-row {
+	display: flex;
+    align-items: stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #F7f2E6;
+}
+
+.quantity {
+	display: inline-block;
+	font-weight: 700;
+	padding-right:10px;
+}
+
+.chg-quantity {
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-quantity:hover {
+	opacity: .6;
+}
+
+.theme-btn {
+    background-color: #e5dac0;
+}
+
+.theme2-btn {
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 13pt;
+    line-height: 15pt;
+    background-color: #90341C !important;
+    float: right;
+    margin:5px;
+}
+
+.hidden {
+	display: none !important;
+}

@@ -1,0 +1,115 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+<!--TODO change images for each bullet.
+    TODO update descriptions for each item
+    TODO add links for membership and classes
+-->
+{% block content %}
+<!--section-banner-->
+<div class="section-bg yoga-banner">
+    <div class="row no-gutters">
+        <div class="col-md-3">
+            {% include 'website/events-holder.html' %}
+        </div>
+    </div>
+</div>
+<div class="section section-main-box py-5">
+    <div class="row no-gutters">
+        <div class="col-md-12 mb-5">
+            <h1 class="heading">Yoga and Fitness<br>classes for everyone!</h1>
+            <p class="sub-text">We offer a variety of yoga and fitness classes to suit your every need.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_1.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3">
+                            <h3 class="title">Yoga</h3>
+                            <p class="description">Your average run of the mill yoga!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_2.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Pilates</h3>
+                            <p class="description">Get some pilates in your life!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_3.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Core Conditioning</h3>
+                            <p class="description">Strengthen your core!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_4.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 ">
+                            <h3 class="title">Aero Yoga</h3>
+                            <p class="description">Yoga, but in the air!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_5.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 py-2">
+                            <h3 class="title">Body Fit</h3>
+                            <p class="description">In order to build a better climber you have to have a solid base
+                            of conditioning. This class is designed to get you a solid base!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card six-set-container">
+                    <div class="d-flex">
+                        <div class="left">
+                            <img src="{% static 'images/climb_coffee_6.jpg' %}" alt="" class="img">
+                        </div>
+                        <div class="right align-self-center px-3 py-2">
+                            <h3 class="title">Advanced Fit</h3>
+                            <p class="description">Take your conditioning to the next level!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center py-4">
+                    <!-- TODO: Make these buttons work -->
+                    <button class="btn custom-bg mr-4">View Calendar ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

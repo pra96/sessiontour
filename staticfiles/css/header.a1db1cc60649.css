@@ -1,0 +1,250 @@
+/* Set up defaults for header */
+.header {
+    width: 100vw;
+    min-height: 140px;
+    background-color: #F7F2E5;
+    overflow: hidden;
+}
+.header .logo-area {
+    position: relative;
+    height: 115px;
+}
+.header .logo-art {
+    position: absolute;
+    max-width: 140px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.header .logo {
+    position: absolute;
+    max-width: 180px;
+    left: 110px;
+    bottom: 6px;
+}
+.header-menus-options {
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 13pt;
+    line-height: 15pt;
+    color: #3D0B18;
+}
+
+.header-menus-options .menu .menu-link {
+    text-transform: uppercase;
+    font-size: 12pt;
+    color: #3D0B18;
+    text-decoration: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+.header-menus-options .menu .menu-link:current {
+    background: #90341C;
+}
+.header-menus-options .menu .menu-link:hover {
+    cursor: pointer;
+    color: #90341C;
+}
+.header-menus-options .option .option-link {
+    background: #3D0B18;
+    color: #F7F2E6;
+    font-size: 15pt;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+}
+
+.header-menus-options .option .option-link:hover{
+    cursor: pointer;
+    background: #90341C;
+}
+.header-menus-options .phone-no{
+    text-transform: uppercase;
+    color: #3D0B18;
+    font-size: 15pt;
+    line-height: 26.38pt;
+    font-family: "Veneer", serif;
+    text-decoration: none;
+}
+
+.menu .header-menu {
+    list-style-type: none;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    column-width: 4em;
+}
+.icon{
+    display: none;
+}
+.checkbtn {
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+.home-link, .event-link{
+    display: none;
+    text-decoration: none;
+}
+.close-menu{
+    display: none;
+}
+@media (max-width: 850px){
+    .header {
+        /* background-color: #E5DAC0; */
+        background-color: #F7F2E5;
+    }
+    a.icon {
+        position: inherit;
+        float: right;
+        display: block;
+        color: #3D0B18;
+        font-size: 40px;
+        line-height: 40px;
+        top: 50%;
+    }
+    .menu .header-menu {
+        list-style-type: none;
+        column-count: 1;
+    }
+    .header .logo-art{
+        max-width: 120px;
+    }
+    .logo{
+        width: 40vw;
+    }
+    .header-container{
+        background-color: #F7f2E6;
+        width: 100vw;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .logo-area{
+        width: 100vw;
+    }
+    .icon-box{
+        margin: 1vh;
+        top: 50%;
+    }
+    .fa-bars {
+        background-color: #E5DAC0;
+        border-color: #E5DAC0;
+    }
+    .menu-icon{
+        display: inline;
+    }
+    .close-menu{
+        display: block;
+        position: absolute;
+        height: 15vw;
+        width: 15vw;
+        top: 1rem;
+        right: 1rem;
+        background-color: #F7F2E6;
+        color: #3D0B18;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 28pt;
+    }
+    .close-menu a.exit-button{
+        position: sticky;
+        top: 50%;
+    }
+    .checkbtn{
+        font-size: 60px;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: block;
+        float: right;
+    }
+    .drop-down {
+        display: none;
+    }
+    a.home-link {
+        display: block;
+        font-size: 18pt;
+        text-decoration: none;
+    }
+    .header-menus-options .social-links a {
+        display: none;
+    }
+    .header-menus-options {
+        position: inherit;
+        width: 100vw;
+        height: 100vh;
+        top: 80px;
+        left: 0;
+        text-align: center;
+        font-size: 18pt;
+    }
+    .header-menus-options .menu .menu-link {
+        font-size: 18pt;
+    }
+    .header-menus-options ul li {
+        display: block;
+        padding-bottom: 1rem;
+    }
+    .header-menus-options ul li a {
+        font-size: 52px;
+    }
+    .drop-down.responsive {
+        background-color: #E5DAC0;
+        display: block;
+        /* position: absolute; */
+        width: 100%;
+        right: 0;
+        top: 0;
+        font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+        font-weight: bold;
+        font-size: 18pt;
+        color: #3D0B18;
+    }
+    .drop-down.responsive a:hover{
+        font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+        font-weight: bold;
+        font-size: 16pt;
+        color: #90341C;
+    }
+    .drop-down.responsive a{
+        font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+        font-weight: bold;
+        font-size: 18pt;
+        color: #3D0B18;
+        padding-bottom: 1rem;
+    }
+    .option-link:last-child{
+        display: none;
+    }
+    .drop-down.responsive .header-menus-options {
+        text-align: center;
+        align-items: center;
+    }
+    .header-menus-options .option {
+        width: 40vw;
+    }
+    .header-menus-options .option .option-link {
+        font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+        color: #F7F2E6;
+        font-weight: normal;
+        font-size: 18pt;
+        width: 40vw;
+        margin-bottom: 1rem;
+        padding-top: 6px;
+        padding-bottom: 6px;  
+    }
+    .header-menus-options .phone-no a{
+        font-size: 25pt;
+        font-weight: normal;
+        color: #3D0B18;
+    }
+}

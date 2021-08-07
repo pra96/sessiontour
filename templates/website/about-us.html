@@ -1,0 +1,23 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+<!--TODO Update photos and descriptions. Expand blocks.
+-->
+{% block content %}
+    <!-- Banner section -->
+    <!-- TODO: add text to the center of this -->
+<div class="section-bg about-banner">
+</div>
+    <!-- about us main section -->
+<div class="section section-default py-5">
+    <div class="row">
+        <div class="col-md-12 mb-5">
+            <h1 class="heading">About Us</h1>
+            <p class="sub-text">We have a passion for climbing and we want to share it with you. We have years of
+            indoor and outdoor experience and have formed the perfect team to help you explore the world of rock
+            climbing whether that be indoors or outdoors. Check out our staff bios along with other information about
+            what we wish to accomplish here at Sessions Climbing + Fitness.</p>
+        </div>
+    </div>
+{% include 'website/team-slider.html' %}
+</div>
+{% endblock %}

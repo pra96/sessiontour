@@ -1,0 +1,97 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="section section-bg-reserve">
+    {% include 'huecotours/reserve-nav-bar.html' %}
+</div>
+<div class="section section-main-box">
+    <div class="row">
+        <div class="col-sm-12 justify-content-center">
+            <h3 class="heading-reserve">Below are our public tours that you can join. You can click on any public tour
+            to register and join that tour.</h3>
+        </div>
+    </div>
+    {{public}}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box-element">
+                <table class="table">
+					<tr>
+                        <td class="tour-heading"><strong>Tour ID</strong></td>
+                        <td class="tour-heading"><strong>Tour Date</strong></td>
+                        <td class="tour-heading"><strong>Meeting Time</strong></td>
+                        <td class="tour-heading"><strong>Tour Type</strong></td>
+                        <td class="tour-heading"><strong>Clients</strong></td>
+                        <td class="tour-heading"><strong>Destination</strong></td>
+                        <td class="tour-heading"><strong>Tour Guide</strong></td>
+					</tr>
+                    {% for val in  public%}
+                       <tr>     
+                        <th class="tour-listing">{{val.guideTourId}}</th>
+                        <th class="tour-listing"> {{val.tourDate}} </th>
+                        <th class="tour-listing">{{val.meetTime}}</th>
+                        <th class="tour-listing">{{val.tourType}}</th>
+                        <th class="tour-listing">
+                            {% for key, client in val.clients.items %}
+                                {{client.first_name}} ({{key}})
+                            {% endfor %}
+                        </th>
+                        <th class="tour-listing">{{val.destination}}</th>
+                        <th class="tour-listing">{{val.guide}}</th>
+                        </tr>
+                    {% endfor %}
+
+
+                    {% comment %} <tr>
+                        <th class="tour-listing">1</th>
+                        <th class="tour-listing">August 1, 2021</th>
+                        <th class="tour-listing">9:00 AM</th>
+                        <th class="tour-listing">Bouldering</th>
+                        <th class="tour-listing">Albert A. (3), Louie C. (2)</th>
+                        <th class="tour-listing">Jungle Gym</th>
+                        <th class="tour-listing">Jacob G.</th>
+                    </tr> {% endcomment %}
+				</table>
+            </div>
+        </div>
+    </div>
+<div class="row">
+        <div class="col-sm-12 justify-content-center">
+            <h3 class="heading-reserve">Below are private tours and public tours that are full:</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box-element">
+                <table class="table">
+					<tr>
+                        <td class="tour-heading"><strong>Tour ID</strong></td>
+                        <td class="tour-heading"><strong>Tour Date</strong></td>
+                        <td class="tour-heading"><strong>Meeting Time</strong></td>
+                        <td class="tour-heading"><strong>Tour Type</strong></td>
+                        <td class="tour-heading"><strong>Clients</strong></td>
+                        <td class="tour-heading"><strong>Destination</strong></td>
+                        <td class="tour-heading"><strong>Tour Guide</strong></td>
+					</tr>
+                    {% for val in  private%}
+                       <tr>     
+                        <th class="tour-listing">{{val.guideTourId}}</th>
+                        <th class="tour-listing"> {{val.tourDate}} </th>
+                        <th class="tour-listing">{{val.meetTime}}</th>
+                        <th class="tour-listing">{{val.tourType}}</th>
+                        <th class="tour-listing">
+                            {% for key, client in val.clients.items %}
+                                {{client.first_name}} ({{key}})
+                            {% endfor %}
+                        </th>
+                        <th class="tour-listing">{{val.destination}}</th>
+                        <th class="tour-listing">{{val.guide}}</th>
+                        </tr>
+                    {% endfor %}
+				</table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

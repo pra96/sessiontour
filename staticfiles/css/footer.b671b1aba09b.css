@@ -1,0 +1,155 @@
+/* Set the styling for the footer */
+.footer {
+    width: 100%;
+    color: #3D0B18;
+    background-image: url("../images/footer.8ce239806ca3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 160px;
+}
+
+.footer-logo {
+    max-width: 100%;
+    margin-left: 40px;
+}
+
+.footer-menus-options {
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    margin: 0;
+}
+
+.footer-menus-options .menu .menu-link {
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    font-size: 12px;
+    color: #e5dac0;
+    text-decoration: none;
+}
+
+.footer-menus-options .menu .menu-link:hover {
+    cursor: pointer;
+    color: #90341C;
+}
+
+.footer-menus-options .options .option-link {
+    background: #F7F2E6;
+    color: #3D0B18;
+    font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 12pt;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 7px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.footer-menus-options .options .option-link:hover {
+    cursor: pointer;
+    background: #90341C;
+}
+
+.footer-menus-options .address span {
+    text-transform: capitalize;
+    color: #F7F2E6;
+    font-family: "ArticulatCF-Bold", Helvetica, Arial, Sans-Serif, serif;
+    font-size: 13pt;
+    line-height: 15pt;
+}
+
+.footer-menus-options .phone-no {
+    font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+    text-transform: uppercase;
+    color: #F7F2E6;
+    font-size: 14pt;
+    line-height: 28.38pt;
+    letter-spacing: 2pt;
+    text-decoration: none;
+}
+
+.menu .footer-menu {
+    list-style-type: none;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    column-width: 4em;
+}
+.responsive-br{
+    display: none;
+}
+.responsive-phone-no{
+    display: none;
+}
+.ripe-info-link{
+    display: none;
+}
+@media (max-width: 850px){
+    .footer-logo{
+        margin-left: -1rem;
+        width: 80%;
+    }
+    .footer-menus-options{
+        color: #E5DAC0;
+    }
+    .footer-menus-options .menu .menu-link {
+        display: none;
+    }
+    .footer-menus-options .options .option-link {
+        display: none;
+    }
+    .responsive-phone-no{
+        display: inline;
+        text-align: center;
+        font-family: "Veneer", Helvetica, Arial, Sans-Serif, serif;
+        font-size: 25pt;
+        font-weight: normal;
+        /* color: #3D0B18; */
+        padding-bottom: 1rem;
+    }
+    .responsive-phone-no .phone-no{
+        font-size: 25pt;
+        color: #E5DAC0;
+
+    }
+    .footer-menus-options .address {
+        text-align: center;
+        font-family: 'Articulate CF v2';
+        font-weight: 600;
+        font-size: 16pt;
+        color: #e5dac0;
+    }
+    .footer-menus-options .address span{
+        padding-bottom: 1rem;
+        display: inline-block;
+        color: #e5dac0;
+    }
+    .responsive-br{
+        display: inline;
+    }
+    .social {
+        align-items: center;
+    }
+    .social .phone-no{
+        display: none;
+    }
+    .social .social-link {
+        color: #e5dac0;
+        padding-bottom: 1rem;
+        width: 80%;
+    }
+    /* .social .social-links .social-link img{
+        height: 2rem;
+    } */
+    .ripe-info-link{
+        display: inline;
+        font-family: 'Articulate CF v2';
+        font-weight: medium;
+        font-size: 14pt;
+        color:#e5dac0;
+    }
+    .ripe-info-link .ripe-link{
+        font-weight: bold;
+        color:#e5dac0;
+    }
+    
+}
