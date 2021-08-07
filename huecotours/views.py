@@ -21,13 +21,17 @@ def guides(request):
             data = {}
             for ind, guide in enumerate(guides):
                 currGuide = GuideInfo.objects.get(guide=guide)
+                if currGuide.fix_price == 0:
+                    price = "$" + str(currGuide.variable_price)+"/person"
+                else:
+                    price = "$" + str(currGuide.fix_price) +" + " + str(currGuide.variable_price)+"/person"
                 data[ind] = {
                     "guide":guide.id,
                     "name": guide.first_name + " " + guide.last_name,
                     "phoneNumber": "",
                     "email":guide.email,
                     "description": currGuide.description,
-                    "price": currGuide.variable_price
+                    "price": price
                 }
             return render(request, 'huecotours/guides.html', {'data':data})
         except:

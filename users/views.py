@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import User
 from django.contrib.auth import login
 from huecotours.models import GuideInfo
+from django.urls import re_path
 # Create your views here.
 
 def login(request):
@@ -32,9 +33,7 @@ def login(request):
     return render(request, 'user/login.html')
 
 def signup(request):
-    if request.user.is_authenticated or request.user.is_staff:
-        return redirect('home')
-    else:
+    if request:
         if request.method == 'POST':
             first_name = request.POST.get('first_name', False)
             last_name = request.POST.get('last_name', False)
