@@ -14,7 +14,7 @@ Including another URL conf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from huecotours import urls
-from users.views import signup,login , logout, guideInfoUpdate
+from users.views import signup,login , logout
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
@@ -36,5 +36,4 @@ urlpatterns = [
     path("login/", login, name="login"),
     path("logout/", logout , name="logout"),
     path('signup/', signup, name="signup"),
-    path('guide_price', guideInfoUpdate, name="guide_price")
 ]

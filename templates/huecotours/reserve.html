@@ -24,20 +24,26 @@
                         <td class="tour-heading"><strong>Clients</strong></td>
                         <td class="tour-heading"><strong>Destination</strong></td>
                         <td class="tour-heading"><strong>Tour Guide</strong></td>
+                        <td class="tour-heading"><strong>Apply</strong></td>
 					</tr>
                     {% for val in  public%}
                        <tr>     
-                        <th class="tour-listing">{{val.guideTourId}}</th>
-                        <th class="tour-listing"> {{val.tourDate}} </th>
-                        <th class="tour-listing">{{val.meetTime}}</th>
-                        <th class="tour-listing">{{val.tourType}}</th>
-                        <th class="tour-listing">
-                            {% for key, client in val.clients.items %}
-                                {{client.first_name}} ({{key}})
-                            {% endfor %}
-                        </th>
-                        <th class="tour-listing">{{val.destination}}</th>
-                        <th class="tour-listing">{{val.guide}}</th>
+                            <th class="tour-listing">{{val.guideTourId}}</th>
+                            <th class="tour-listing"> {{val.tourDate}} </th>
+                            <th class="tour-listing">{{val.meetTime}}</th>
+                            <th class="tour-listing">{{val.tourType}}</th>
+                            <th class="tour-listing">
+                                {% for key, client in val.clients.items %}
+                                    {{client.first_name}} ({{key}})
+                                {% endfor %}
+                            </th>
+                            <th class="tour-listing">{{val.destination}}</th>
+                            <th class="tour-listing">{{val.guide}}</th>
+                            <form method="POST">
+                            {% csrf_token %}
+                                <input hidden type="text" name="product" value='{{val.guideTourId}}'>
+                                <th> <input class="btn btn-primary" type="submit" method="POST" value="Apply"><th>
+                            </form> 
                         </tr>
                     {% endfor %}
 
