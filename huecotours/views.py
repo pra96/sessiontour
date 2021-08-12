@@ -99,7 +99,7 @@ def requestTour(request):
                         destination=destination
                     )
 
-                    if tourGuideMap.numberOfPersons + number_of_person >= max_clientMap[tourGuideMap.tourType]:
+                    if tourGuideMap.numberOfPersons + int(number_of_person) >= max_clientMap[tourGuideMap.tourType]:
                         messages.info(request, "All Seats full for this tour, apply for another")
                         return render(request, 'huecotours/request-tour.html')
                     clients = tourGuideMap.clients
@@ -107,9 +107,10 @@ def requestTour(request):
                     tourClientData["_state"] = None
                     clients[str(tourClientData["reservationId"])] = tourClientData
                     tourGuideMap.clients = clients
-                    tourGuideMap.numberOfPersons += number_of_person
+                    tourGuideMap.numberOfPersons += int(number_of_person)
                     tourGuideMap.save()
-                except:
+                except Exception as e:
+                    print(e)
                     client = dict()
                     tourClientData = tourClient.__dict__
                     del tourClientData["_state"]
@@ -122,11 +123,10 @@ def requestTour(request):
                         clients=client,
                         guide=getGuide.guide.id,
                         destination=destination,
-                        numberOfPersons=number_of_person
+                        numberOfPersons=int(number_of_person)
                     )
                 messages.success(request, "Registration Submitted")
-            except Exception as e:
-                print(e)
+            except:
                 messages.info(request, "Registration Failed")
             return redirect('hoeco_reserve')
         return render(request, 'huecotours/request-tour.html')
