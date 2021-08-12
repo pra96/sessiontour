@@ -34,6 +34,7 @@ class TourReservations(models.Model):
     tourStyle = models.CharField(choices=TOUR_STYLE, max_length=8)
     comments = models.TextField(max_length=300, default="", blank=True)
     isAccept = models.BooleanField(default=False)
+    number_of_clients = models.IntegerField(default=1)
 
 class Tours(models.Model):
     TOUR_TYPES = [('bouldering','Bouldering'), ('hiking','Hiking'), ('rock art', 'Rock Art'), ('technical climbing', 'Technical Climbing')]

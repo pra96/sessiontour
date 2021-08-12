@@ -121,15 +121,18 @@
                         </div>
                 </div>
 
+                <div class="form-col">
+                        <div class="form-group col-md-12">
+                        <label for="validationCustom03">Comments</label>
+                        <input type="text" class="form-control" id="validationCustom03" placeholder="Write your comments" name="comments" row=3>
+                </div>
+
+
+
                     <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
     </div>
-
-            {% if messages %}
-        {% for message in messages %}
-        <div class="alert">{{ message }}</div>
-        {% endfor %}
-        {% endif %}
+       
 </div>
 
 

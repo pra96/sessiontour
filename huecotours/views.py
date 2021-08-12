@@ -1,3 +1,4 @@
+import re
 from django.contrib import messages
 from users.models import User
 from django.shortcuts import render, redirect
@@ -58,7 +59,10 @@ def requestTour(request):
             tourStyle = request.POST.get("tour_style", False)
             destination = request.POST.get("destination", False)
             number_of_person = request.POST.get("no_persons", False)
+            comments = request.POST.get("comments", False)
             booked_by_user = get_user.id
+            if number_of_person is False:
+                number_of_person = 1
             try:
                 try:
                     getGuide = GuideInfo.objects.get(destination=destination)
@@ -75,7 +79,9 @@ def requestTour(request):
                     tourStyle=tourStyle,
                     destination=destination,
                     booked_by_user=booked_by_user,
-                    guide_assigned=getGuide.guide.id
+                    guide_assigned=getGuide.guide.id,
+                    number_of_clients=number_of_person,
+                    comments=comments
                 )
                 max_clientMap = {
                     'bouldering':10,
@@ -93,7 +99,7 @@ def requestTour(request):
                         destination=destination
                     )
 
-                    if tourGuideMap.numberOfPersons >= max_clientMap[tourGuideMap.tourType]:
+                    if tourGuideMap.numberOfPersons + number_of_person >= max_clientMap[tourGuideMap.tourType]:
                         messages.info(request, "All Seats full for this tour, apply for another")
                         return render(request, 'huecotours/request-tour.html')
                     clients = tourGuideMap.clients
@@ -101,7 +107,7 @@ def requestTour(request):
                     tourClientData["_state"] = None
                     clients[str(tourClientData["reservationId"])] = tourClientData
                     tourGuideMap.clients = clients
-                    tourGuideMap.numberOfPersons += 1
+                    tourGuideMap.numberOfPersons += number_of_person
                     tourGuideMap.save()
                 except:
                     client = dict()
@@ -116,12 +122,13 @@ def requestTour(request):
                         clients=client,
                         guide=getGuide.guide.id,
                         destination=destination,
-                        numberOfPersons=1
+                        numberOfPersons=number_of_person
                     )
                 messages.success(request, "Registration Submitted")
             except Exception as e:
                 print(e)
                 messages.info(request, "Registration Failed")
+            return redirect('hoeco_reserve')
         return render(request, 'huecotours/request-tour.html')
     else:
         return redirect('login')
@@ -142,7 +149,8 @@ def reserve(request):
                     tourStyle=guideTourMap.tourStyle,
                     destination=guideTourMap.destination,
                     booked_by_user=get_user.id,
-                    guide_assigned=guideTourMap.guide
+                    guide_assigned=guideTourMap.guide,
+                    number_of_clients=1
                 )
             max_clientMap = {
                 'bouldering':10,
@@ -160,7 +168,6 @@ def reserve(request):
             guideTourMap.clients = clients
             guideTourMap.numberOfPersons += 1
             guideTourMap.save()
-            messages.info(request, "Added to the Tour")
 
         publicTours = GuideTourMapping.objects.filter(tourStyle="public")
         privateTours = GuideTourMapping.objects.filter(tourStyle="private")

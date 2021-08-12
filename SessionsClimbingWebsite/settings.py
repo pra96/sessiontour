@@ -155,10 +155,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 
 
-# Django Heroku settings
-django_heroku.settings(locals())
-
-
 # Google SMTP Server
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
