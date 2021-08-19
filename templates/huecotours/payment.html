@@ -1,0 +1,89 @@
+{% extends 'website/app_layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="section section-bg-reserve">
+    {% include 'huecotours/reserve-nav-bar.html' %}
+</div>
+<div class="section section-main-box">
+
+    <div class="row justify-content-center">
+            
+        <form method="POST">
+            {% csrf_token %}
+            <h4 class="title">Amount requested: ${{ data.amount }}</h4>
+            </br>
+            <div class="box-element" id="payment-info">
+				<large>Make You Payment Here using Paypal</large>
+				<div id="paypal-button-container"></div>
+			</div>
+
+            {% comment %} <input type = "button" onclick = "submitFormData()" value = "payment testing button"> {% endcomment %}
+
+                <script type ='text/javascript'> </script>
+                <script>
+                    // Function to push user data to the back end of the system.
+                    function submitFormData() {
+                        console.log('Payment Button Clicked.')
+
+                        let url = '/hueco_tanks/process_order'
+                        fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': csrftoken
+                            },
+                            body: JSON.stringify({'amount':{{data.amount}}, 'id':{{data.tourReservationId}}}),
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log('Success:', data);
+                            // Clear cart once payment must pushed
+                            window.location.href = '{% url 'hoeco_reserve' %}'
+                        })
+                    }
+                </script>
+                <script src="https://www.paypal.com/sdk/js?client-id=AehT6ZUfCNAQnvo0iigop5PWUSnaeIBEsfPADkMZyq1DeUasjEfP2MQ_JZ6p0cc10C-hMTTj9ziASce-&currency=USD&disable-funding=credit"></script>
+                <script>
+                    // Custom total from items.
+                    const total = '{{ data.amount | floatformat:2 }}'
+
+                    // Render the PayPal button into #paypal-button-container
+                    paypal.Buttons({
+
+
+                        // Set up the transaction
+                        createOrder: function(data, actions) {
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value: parseFloat(total).toFixed(2)
+                                    }
+                                }]
+                            });
+                        },
+
+                        // Finalize the transaction
+                        onApprove: function(data, actions) {
+                            return actions.order.capture().then(function(details) {
+                                // Show a success message to the buyer and call method to
+                                // finalize in backend.
+                                submitFormData()
+                                alert('Transaction completed by ' + '{{data.name}}' + '!');
+                            });
+                        }
+
+
+                    }).render('#paypal-button-container');
+                </script>
+
+
+
+        </form>
+    </div>
+       
+</div>
+
+
+{% endblock %}

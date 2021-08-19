@@ -5,6 +5,8 @@ from django.shortcuts import render, redirect
 from requests import request
 from .models import TourReservations, GuideInfo, Tours, GuideTourMapping
 import json
+from django.http import JsonResponse
+from .utils import process_data
 # Create your views here.
 
 def homepage(request):
@@ -89,7 +91,6 @@ def requestTour(request):
                     'rock art':6,
                     'technical climbing':6
                 }
-
                 try:
                     tourGuideMap = GuideTourMapping.objects.get(
                         tourType=tourType,
@@ -102,31 +103,23 @@ def requestTour(request):
                     if tourGuideMap.numberOfPersons + int(number_of_person) >= max_clientMap[tourGuideMap.tourType]:
                         messages.info(request, "All Seats full for this tour, apply for another")
                         return render(request, 'huecotours/request-tour.html')
-                    clients = tourGuideMap.clients
-                    tourClientData = tourClient.__dict__
-                    tourClientData["_state"] = None
-                    clients[str(tourClientData["reservationId"])] = tourClientData
-                    tourGuideMap.clients = clients
-                    tourGuideMap.numberOfPersons += int(number_of_person)
-                    tourGuideMap.save()
-                except Exception as e:
-                    print(e)
-                    client = dict()
-                    tourClientData = tourClient.__dict__
-                    del tourClientData["_state"]
-                    client[tourClient.reservationId] = tourClientData
-                    GuideTourMapping.objects.create(
-                        tourType=tourType,
-                        tourStyle=tourStyle,
-                        tourDate=tourDate,
-                        meetTime=meetTime,
-                        clients=client,
-                        guide=getGuide.guide.id,
-                        destination=destination,
-                        numberOfPersons=int(number_of_person)
-                    )
-                messages.success(request, "Registration Submitted")
-            except:
+                except:
+                    messages.info(request, "All Seats available for this tour")
+                price_type = getGuide.priceType
+                fix_price = getGuide.fix_price
+                variable_price = getGuide.variable_price
+                if price_type == 'negotiable':
+                    total_amount = fix_price
+                else:
+                    total_amount = fix_price + variable_price*int(number_of_person)
+                data = {
+                    "amount":total_amount,
+                    "name":first_name,
+                    "tourReservationId": tourClient.reservationId
+                }
+                return render(request, 'huecotours/payment.html', { "data":data})
+            except Exception as e:
+                print(e)
                 messages.info(request, "Registration Failed")
             return redirect('hoeco_reserve')
         return render(request, 'huecotours/request-tour.html')
@@ -158,16 +151,23 @@ def reserve(request):
                 'rock art':6,
                 'technical climbing':6
             }
+            getGuide = GuideInfo.objects.get(destination=guideTourMap.destination)
             if guideTourMap.numberOfPersons >= max_clientMap[guideTourMap.tourType]:
                 messages.info(request, "All Seats full for this tour, apply for another")
                 return render(request, 'huecotours/request-tour.html')
-            clients = guideTourMap.clients
-            tourClientData = tourClient.__dict__
-            tourClientData["_state"] = None
-            clients[str(tourClientData["reservationId"])] = tourClientData
-            guideTourMap.clients = clients
-            guideTourMap.numberOfPersons += 1
-            guideTourMap.save()
+            price_type = getGuide.priceType
+            fix_price = getGuide.fix_price
+            variable_price = getGuide.variable_price
+            if price_type == 'negotiable':
+                total_amount = fix_price
+            else:
+                total_amount = variable_price + fix_price
+            data = {
+                "amount":total_amount,
+                "name":get_user.first_name,
+                "tourReservationId": tourClient.reservationId
+            }
+            return render(request, 'huecotours/payment.html', { "data":data})
 
         publicTours = GuideTourMapping.objects.filter(tourStyle="public")
         privateTours = GuideTourMapping.objects.filter(tourStyle="private")
@@ -194,4 +194,9 @@ def tourPrice(request):
     
     else:
         return redirect('login')
+
+
+def process_order(request):
+    process_data(request)
+    return JsonResponse('Payment submitted...', safe=False)
     
