@@ -8,6 +8,7 @@
             <div class="card widget-flat">
                 <div class="card-body bg-light">
                     <div class="subtitle mb-2 pt-2" style="text-align: center;">
+                        {{data}}
                         {% if title %}
                         <h2 class="mb-2" style="color: #080d2b; margin-top: -25px;">{{ title }}</h2>
                         {% else %}
@@ -57,7 +58,27 @@
                             </div>
 
                             </br>
-                        <button class="btn btn-primary" type="submit">Submit</button>
+                         <input type = "button" onclick = "submitFormData()" value = "Submit"> 
+                            <script>
+                                // Function to push user data to the back end of the system.
+                                function submitFormData() {
+                                    let url = 'updateInfo'
+                                    fetch(url, {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'X-CSRFToken': csrftoken
+                                        },
+                                        body: JSON.stringify({'guide_id': {{data}}}),
+                                    })
+                                    .then((response) => response.json())
+                                    .then((data) => {
+                                        console.log('Success:', data);
+                                        window.location.href = '{% url 'login' %}'
+                                    })
+                                }
+                            </script>
+
                         </form>
                 </div>
                 <div align="center">

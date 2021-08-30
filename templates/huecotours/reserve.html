@@ -30,9 +30,13 @@
                         <td class="tour-heading"><strong>Clients</strong></td>
                         <td class="tour-heading"><strong>Destination</strong></td>
                         <td class="tour-heading"><strong>Tour Guide</strong></td>
-                        <td class="tour-heading"><strong>Apply</strong></td>
+                        {% if request.session.first_name %}
+                            <td class="tour-heading"><strong>Claim</strong></td>
+                        {% else %}
+                            <td class="tour-heading"><strong>Apply</strong></td>
+                        {% endif %}
 					</tr>
-                    {% for val in  public%}
+                    {% for val in  not_full%}
                        <tr>     
                             <th class="tour-listing">{{val.guideTourId}}</th>
                             <th class="tour-listing"> {{val.tourDate}} </th>
@@ -45,11 +49,50 @@
                             </th>
                             <th class="tour-listing">{{val.destination}}</th>
                             <th class="tour-listing">{{val.guide}}</th>
-                            <form method="POST">
-                            {% csrf_token %}
-                                <input hidden type="text" name="product" value='{{val.guideTourId}}'>
-                                <th> <input class="btn btn-primary" type="submit" method="POST" value="Apply"><th>
-                            </form> 
+                            {% if val.guide == 0 %}
+                                {% if request.session.first_name %}
+                                    <th><input type = "button" onclick = "submitFormData()" value = "Claim"> </th>
+                                    <script>
+                                        // Function to push user data to the back end of the system.
+                                        function submitFormData() {
+                                            let url = 'guideClaim'
+                                            fetch(url, {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json',
+                                                    'X-CSRFToken': csrftoken
+                                                },
+                                                body: JSON.stringify({'guide_id': {{request.session.id}}, 'guidTourMapping':{{val.guideTourId}}})
+                                            })
+                                            .then((response) => response.json())
+                                            .then((data) => {
+                                                console.log('Success:', data);
+                                                window.location.href = '{% url 'hoeco_reserve' %}'
+                                            })
+                                        }
+                                    </script>
+                                {% else %}
+                                    <th><input type = "button" onclick = "submitFormData()" value = "apply"> </th>
+                                    <script>
+                                        // Function to push user data to the back end of the system.
+                                        function submitFormData() {
+                                            window.location.href = '{% url 'hoeco_request_tour' %}'
+                                        }
+                                    </script>
+                                {% endif %}
+                            {% else %}
+                                {% if request.session.first_name %}
+                                    <th><input type = "button" value = "claimed"> </th>
+                                {% else %}
+                                    <th><input type = "button" onclick = "submitFormData()" value = "apply"> </th>
+                                    <script>
+                                        // Function to push user data to the back end of the system.
+                                        function submitFormData() {
+                                            window.location.href = '{% url 'hoeco_request_tour' %}'
+                                        }
+                                    </script>
+                                {% endif %}
+                            {% endif %}
                         </tr>
                     {% endfor %}
 
@@ -84,20 +127,73 @@
                         <td class="tour-heading"><strong>Clients</strong></td>
                         <td class="tour-heading"><strong>Destination</strong></td>
                         <td class="tour-heading"><strong>Tour Guide</strong></td>
+                        {% if request.session.first_name %}
+                            <td class="tour-heading"><strong>Claim</strong></td>
+                        {% else %}
+                            <td class="tour-heading"><strong>Apply</strong></td>
+                        {% endif %}
+                        
 					</tr>
-                    {% for val in  private%}
+                    {% for val in full%}
                        <tr>     
-                        <th class="tour-listing">{{val.guideTourId}}</th>
-                        <th class="tour-listing"> {{val.tourDate}} </th>
-                        <th class="tour-listing">{{val.meetTime}}</th>
-                        <th class="tour-listing">{{val.tourType}}</th>
-                        <th class="tour-listing">
-                            {% for key, client in val.clients.items %}
-                                {{client.first_name}} ({{key}})
-                            {% endfor %}
-                        </th>
-                        <th class="tour-listing">{{val.destination}}</th>
-                        <th class="tour-listing">{{val.guide}}</th>
+                            <th class="tour-listing">{{val.guideTourId}}</th>
+                            <th class="tour-listing"> {{val.tourDate}} </th>
+                            <th class="tour-listing">{{val.meetTime}}</th>
+                            <th class="tour-listing">{{val.tourType}}</th>
+                            <th class="tour-listing">
+                                {% for key, client in val.clients.items %}
+                                    {{client.first_name}} ({{client.number_of_clients}})
+                                {% endfor %}
+                            </th>
+                            <th class="tour-listing">{{val.destination}}</th>
+                            <th class="tour-listing">{{val.guide}}</th>
+                            {% if val.guide == 0 %}
+                                {% if request.session.first_name %}
+                                    <th><input type = "button" onclick = "submitFormData()" value = "Claim"> </th>
+                                    <script>
+                                        // Function to push user data to the back end of the system.
+                                        function submitFormData() {
+                                            let url = 'guideClaim'
+                                            fetch(url, {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json',
+                                                    'X-CSRFToken': csrftoken
+                                                },
+                                                body: JSON.stringify({'guide_id': {{request.session.username}}, 'guidTourMapping':{{val.guideTourId}}}),
+                                            })
+                                            .then((response) => response.json())
+                                            .then((data) => {
+                                                console.log('Success:', data);
+                                                window.location.href = '{% url 'hoeco_reserve' %}'
+                                            })
+                                        }
+                                    </script>
+                                {% else %}
+                                    <th><input type = "button" onclick = "submitFormData()" value = "apply"> </th>
+                                    <script>
+                                        // Function to push user data to the back end of the system.
+                                        function submitFormData() {
+                                            let url = 'applyTour'
+                                            fetch(url, {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json',
+                                                    'X-CSRFToken': csrftoken
+                                                },
+                                                body: JSON.stringify({'guide_id': {{request.session.username}}, 'guidTourMapping':{{val.guideTourId}}}),
+                                            })
+                                            .then((response) => response.json())
+                                            .then((data) => {
+                                                console.log('Success:', data);
+                                                window.location.href = '{% url 'hoeco_reserve' %}'
+                                            })
+                                        }
+                                    </script>
+                                {% endif %}
+                            {% else %}
+                                <th><input type = "button" value = "claimed"> </th>
+                            {% endif %}
                         </tr>
                     {% endfor %}
 				</table>

@@ -1,3 +1,5 @@
+from pyexpat import model
+import uuid
 from colorsys import ONE_THIRD
 from operator import mod
 from django.db import models
@@ -16,29 +18,6 @@ class GuideInfo(models.Model):
     mobile_number = models.CharField(max_length=12, default="", blank=True)
     tourType = models.CharField(choices=GUIDE_TYPE, max_length=20 , default="")
 
-class TourReservations(models.Model):
-    TOUR_TYPES = [('bouldering','Bouldering'), ('hiking','Hiking'), ('rock art', 'Rock Art'), ('technical climbing', 'Technical Climbing')]
-    TOUR_STYLE = [('public', 'Public'), ('private', 'Private')]
-    
-    first_name = models.CharField(max_length=30, default="" ,null=False)
-    last_name = models.CharField(max_length=50, null=True, blank=True)
-    email_id = models.EmailField(blank=True, null=True)
-    reservationId = models.BigAutoField(primary_key=True, auto_created=True, default=None)
-    mobile_phone = models.CharField(max_length=12, default="", blank=True)
-    tourDate = models.CharField(default="" , blank=True, max_length=50)
-    meetTime = models.CharField(default="" , blank=True, max_length=50)
-    tourType = models.CharField(choices=TOUR_TYPES, max_length=20)
-    booked_by_user = models.BigIntegerField(blank=True, default=0)
-    guide_assigned = models.BigIntegerField(blank=True, default=0)
-    destination = models.CharField(max_length=100, null=False)
-    tourStyle = models.CharField(choices=TOUR_STYLE, max_length=8)
-    comments = models.TextField(max_length=300, default="", blank=True)
-    isAccept = models.BooleanField(default=False)
-    number_of_clients = models.IntegerField(default=1)
-    transaction_id = models.CharField(max_length=100, default="", null=True, blank=True)
-    tansaction_status = models.BooleanField(default=False)
-    transaction_amount = models.FloatField(default=0.0)
-
 class Tours(models.Model):
     TOUR_TYPES = [('bouldering','Bouldering'), ('hiking','Hiking'), ('rock art', 'Rock Art'), ('technical climbing', 'Technical Climbing')]
     TOUR_STYLE = [('public', 'Public'), ('private', 'Private')]
@@ -52,11 +31,34 @@ class Tours(models.Model):
     fixedCost = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     isActive = models.BooleanField(default=True)
 
+class TourReservations(models.Model):
+    TOUR_TYPES = [('bouldering','Bouldering'), ('hiking','Hiking'), ('rock art', 'Rock Art'), ('technical climbing', 'Technical Climbing')]
+    TOUR_STYLE = [('public', 'Public'), ('private', 'Private')]
+    
+    uuid = models.UUIDField(default=uuid.uuid4 ,auto_created=True)
+    first_name = models.CharField(max_length=30, default="" ,null=False)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
+    email_id = models.EmailField(blank=True, null=True)
+    mobile_phone = models.CharField(max_length=12, default="", blank=True)
+    tourDate = models.CharField(default="" , blank=True, max_length=50)
+    meetTime = models.CharField(default="" , blank=True, max_length=50)
+    tourType = models.CharField(choices=TOUR_TYPES, max_length=20)
+    guide_assigned = models.BigIntegerField(blank=True, default=0)
+    destination = models.CharField(max_length=100, null=False)
+    tourStyle = models.CharField(choices=TOUR_STYLE, max_length=8)
+    comments = models.TextField(max_length=300, default="", blank=True)
+    isAccept = models.BooleanField(default=False)
+    number_of_clients = models.IntegerField(default=1)
+    transaction_id = models.CharField(max_length=100, default="", null=True, blank=True)
+    tansaction_status = models.BooleanField(default=False)
+    transaction_amount = models.FloatField(default=0.0)
+    is_notification_send = models.BooleanField(default=False)
 
 class GuideTourMapping(models.Model):
     TOUR_TYPES = [('bouldering','Bouldering'), ('hiking','Hiking'), ('rock art', 'Rock Art'), ('technical climbing', 'Technical Climbing')]
     TOUR_STYLE = [('public', 'Public'), ('private', 'Private')]
 
+    reservation_id = models.UUIDField(default=uuid.uuid4)
     guideTourId = models.BigAutoField(primary_key=True, auto_created=True, default=None)
     meetTime = models.CharField(default="" , blank=True, max_length=50)
     tourDate = models.CharField(default="" , blank=True, max_length=50)
@@ -66,3 +68,4 @@ class GuideTourMapping(models.Model):
     guide = models.BigIntegerField(blank=True, default=0)
     clients = models.JSONField(default=dict, null=True)
     numberOfPersons = models.IntegerField(default=0)
+    is_full = models.BooleanField(default=False)

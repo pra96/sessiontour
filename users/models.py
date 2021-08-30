@@ -57,7 +57,7 @@ class User(AbstractBaseUser):
     last_name = models.CharField(max_length=50, null=True)
 
     # custom fields for User
-    is_guide = models.BooleanField(default=False)
+    is_guide = models.BooleanField(default=True)
     is_client = models.BooleanField(default=False)
     profile_image = models.ImageField(max_length=255,
                                       upload_to=get_profile_image_path,

@@ -10,5 +10,7 @@ urlpatterns = [
     path('request-tour', views.requestTour, name= 'hoeco_request_tour'),
     path('reverse', view=views.reserve, name='hoeco_reserve'),
     path('tour-prices', view=views.tourPrice, name= 'hoeco_tour_price'),
-    path('process_order', views.process_order, name='process_order')
+    path('notification/<uuid>', view=views.Notification, name='notification'),
+    path('process_order', views.process_order, name='process_order'),
+    path('guideClaim', view=views.GuideClaim, name='guideClaim')
 ]
