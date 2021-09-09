@@ -192,7 +192,17 @@
                                     </script>
                                 {% endif %}
                             {% else %}
-                                <th><input type = "button" value = "claimed"> </th>
+                                {% if request.session.first_name %}
+                                    <th><input type = "button" value = "claimed"> </th>
+                                {% else %}
+                                    <th><input type = "button" onclick = "submitFormData()" value = "apply"> </th>
+                                    <script>
+                                        // Function to push user data to the back end of the system.
+                                        function submitFormData() {
+                                            window.location.href = '{% url 'hoeco_request_tour' %}'
+                                        }
+                                    </script>
+                                {% endif %}
                             {% endif %}
                         </tr>
                     {% endfor %}
